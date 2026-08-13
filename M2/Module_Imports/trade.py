@@ -10,8 +10,6 @@ trades = [
     {"symbol": "NQ", "pnl": 134.0},
     {"symbol": "SP", "pnl": -16.6}
 ]
-with open ("Tradejournal.txt", "w") as datei:
-    print(f"{trades}")
 
 
 def winrate(trades):
@@ -35,7 +33,7 @@ def avg_winn(trades):
 
 def lade_trades(dateiname):
     trades = []
-    with open ("Tradejournal.txt", "r") as datei:
+    with open ("TJ.txt", "r") as datei:
         for zeile in datei:
             teile = zeile.strip().split(",")
             symbol = teile[0]
