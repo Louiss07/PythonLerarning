@@ -4,6 +4,18 @@ test_trades = [
     {"symbol": "NQ", "pnl": 100.0},   # Gewinner
     {"symbol": "SP", "pnl": -50.0}    # Verlierer
 ]
+normal = [
+    {"symbol": "NQ", "pnl": 100.0},
+    {"symbol": "SP", "pnl": 50.0},
+    {"symbol": "NQ", "pnl": -30.0},
+    {"symbol": "SP", "pnl": -20.0}
+]
+
+
+nur_verluste = [
+    {"symbol": "NQ", "pnl": -100.0},
+    {"symbol": "SP", "pnl": -50.0}
+]
 
 
 def winrate(trades):
@@ -16,3 +28,10 @@ def winrate(trades):
 
 
 assert winrate(test_trades) == 50.0
+assert winrate(normal) == 50.0
+assert winrate([]) == 0.0
+assert winrate(nur_verluste) == 0.0
+print("Alle Tests bestanden!")
+
+
+
